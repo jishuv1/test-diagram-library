@@ -18,7 +18,8 @@ import {
   PaletteModel,
   FlowShapes,
   BasicShape,
-  Node, BasicShapes
+  Node,
+  BasicShapes
 } from '@syncfusion/ej2-diagrams';
 import { addEvents } from './script/diagram-common';
 //import { openPalette, closePalette, getClassList } from './styles/html-class';
@@ -144,21 +145,22 @@ let diagram: Diagram = new Diagram({
 diagram.appendTo('#diagram');
 
 //Initialize the flowshapes for the symbol palatte
-    let basicShapes: NodeModel[] = [{
-            id: 'process',
-            shape: {
-                type: 'Flow',
-                shape: 'Process'
-            }
-        },
-        {
-            id: 'document',
-            shape: {
-                type: 'Flow',
-                shape: 'Document'
-            }
-        }
-    ];
+let basicShapes: NodeModel[] = [
+  {
+    id: 'process',
+    shape: {
+      type: 'Flow',
+      shape: 'Process'
+    }
+  },
+  {
+    id: 'Ellipse',
+    shape: {
+      type: 'Basic',
+      shape: 'Ellipse'
+    }
+  }
+];
 //Initializes connector symbols for the symbol palette
 let connectorSymbols: NodeModel[] = [
   {
