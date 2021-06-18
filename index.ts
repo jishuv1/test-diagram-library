@@ -196,7 +196,56 @@ let mySymbols: NodeModel[] = [
     children: ['rectangle1', 'or2']
   }
 ];
-
+let connectorSymbols: ConnectorModel[] = [
+  {
+    id: 'Link1',
+    type: 'Orthogonal',
+    sourcePoint: {
+      x: 0,
+      y: 0
+    },
+    targetPoint: {
+      x: 40,
+      y: 40
+    },
+    targetDecorator: {
+      shape: 'Arrow'
+    }
+  },
+  {
+    id: 'Link21',
+    type: 'Straight',
+    sourcePoint: {
+      x: 0,
+      y: 0
+    },
+    targetPoint: {
+      x: 40,
+      y: 40
+    },
+    targetDecorator: {
+      shape: 'Arrow'
+    }
+  },
+  {
+    id: 'link33',
+    type: 'Bezier',
+    sourcePoint: {
+      x: 0,
+      y: 0
+    },
+    targetPoint: {
+      x: 40,
+      y: 40
+    },
+    style: {
+      strokeWidth: 2
+    },
+    targetDecorator: {
+      shape: 'None'
+    }
+  }
+];
 let palettes: PaletteModel[] = [
   {
     id: 'basic',
@@ -215,11 +264,12 @@ let palettes: PaletteModel[] = [
   {
     id: 'connector',
     expanded: true,
-    symbols: mySymbols,
+    symbols: connectorSymbols,
     iconCss: 'e-ddb-icons e-connector',
     title: 'Connectors'
   }
 ];
+
 //Initializes the symbol palette
 
 let palette: SymbolPalette = new SymbolPalette({
