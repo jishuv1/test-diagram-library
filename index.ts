@@ -193,26 +193,6 @@ let connectorSymbols: NodeModel[] = [
   {
     id: 'My Shape 2',
     children: ['rectangle1', 'or2']
-  },
-  {
-    id: 'rectangle3',
-    offsetX: 272,
-    offsetY: 372,
-    width: 150,
-    height: 100
-  },
-  {
-    id: 'or3',
-    shape: { type: 'Basic', shape: 'Ellipse' },
-
-    offsetX: 272,
-    offsetY: 272,
-    width: 60,
-    height: 60
-  },
-  {
-    id: 'group3',
-    children: ['rectangle3', 'or3']
   }
 ];
 
