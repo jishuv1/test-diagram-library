@@ -10,6 +10,7 @@ import {
   NodeModel,
   UndoRedo,
   ConnectorModel,
+  Connector,
   PointPortModel,
   SymbolPalette,
   SymbolInfo,
@@ -162,7 +163,7 @@ let basicShapes: NodeModel[] = [
   }
 ];
 //Initializes connector symbols for the symbol palette
-let customSymbols: NodeModel[] = [
+let mySymbols: NodeModel[] = [
   {
     id: 'rectangle1',
     offsetX: 100,
@@ -207,14 +208,14 @@ let palettes: PaletteModel[] = [
   {
     id: 'Custom',
     expanded: true,
-    symbols: customSymbols,
+    symbols: mySymbols,
     iconCss: 'e-ddb-icons e-connector',
     title: 'My Libary 2'
   },
   {
     id: 'connector',
     expanded: true,
-    symbols: basicShapes,
+    symbols: mySymbols,
     iconCss: '',
     title: 'Connectors'
   }
