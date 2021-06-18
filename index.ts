@@ -162,7 +162,7 @@ let basicShapes: NodeModel[] = [
   }
 ];
 //Initializes connector symbols for the symbol palette
-let connectorSymbols: NodeModel[] = [
+let customSymbols: NodeModel[] = [
   {
     id: 'rectangle1',
     offsetX: 100,
@@ -207,14 +207,14 @@ let palettes: PaletteModel[] = [
   {
     id: 'Custom',
     expanded: true,
-    symbols: connectorSymbols,
+    symbols: customSymbols,
     iconCss: 'e-ddb-icons e-connector',
     title: 'My Libary 2'
   },
   {
     id: 'connector',
     expanded: true,
-    symbols: connectorSymbols,
+    symbols: basicShapes,
     iconCss: '',
     title: 'Connectors'
   }
