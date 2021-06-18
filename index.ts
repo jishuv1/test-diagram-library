@@ -147,14 +147,14 @@ diagram.appendTo('#diagram');
 //Initialize the flowshapes for the symbol palatte
 let basicShapes: NodeModel[] = [
   {
-    id: 'process',
+    id: 'My Rectangle',
     shape: {
       type: 'Flow',
       shape: 'Process'
     }
   },
   {
-    id: 'Ellipse',
+    id: 'My Circule',
     shape: {
       type: 'Basic',
       shape: 'Ellipse'
@@ -218,18 +218,21 @@ let connectorSymbols: NodeModel[] = [
 
 let palettes: PaletteModel[] = [
   {
-    id: 'flow',
+    id: 'basic',
     expanded: true,
     symbols: basicShapes,
     iconCss: 'e-ddb-icons e-flow',
     title: 'My Libary 1'
   },
   {
-    id: 'connectors',
+    id: 'Custom',
     expanded: true,
     symbols: connectorSymbols,
     iconCss: 'e-ddb-icons e-connector',
     title: 'My Libary 2'
+  },
+  {
+    
   }
 ];
 //Initializes the symbol palette
