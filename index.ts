@@ -185,7 +185,7 @@ let mySymbols: NodeModel[] = [
   },
   {
     id: 'or2',
-    shape: { type: 'Flow', shape: 'Extract' },
+    shape: { type: 'Basic', shape: 'RightTriangle' },
     offsetX: 80,
     offsetY: 50,
     width: 60,
