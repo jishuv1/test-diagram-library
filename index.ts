@@ -17,7 +17,8 @@ import {
   GridlinesModel,
   PaletteModel,
   FlowShapes,
-  Node
+  BasicShape,
+  Node, BasicShapes
 } from '@syncfusion/ej2-diagrams';
 import { addEvents } from './script/diagram-common';
 //import { openPalette, closePalette, getClassList } from './styles/html-class';
@@ -59,12 +60,12 @@ function getConnectorDefaults(obj: ConnectorModel): ConnectorModel {
   return obj;
 }
 
-function getFlowShape(id: string, shapeType: FlowShapes): NodeModel {
-  let flowshape: NodeModel = {
+function getBasicShape(id: string, shapeType: BasicShapes): NodeModel {
+  let basicshape: NodeModel = {
     id: id,
-    shape: { type: 'Flow', shape: shapeType }
+    shape: { type: 'Basic', shape: shapeType }
   };
-  return flowshape;
+  return basicshape;
 }
 
 function getSymbolDefaults(symbol: NodeModel): void {
@@ -120,61 +121,10 @@ let gridlines: GridlinesModel = {
   lineIntervals: interval
 };
 // Initializes the nodes for the diagram
-let nodes: NodeModel[] = [
-  {
-    id: 'NewIdea',
-    height: 60,
-    offsetX: centerX - 50,
-    offsetY: 80,
-    shape: { type: 'Flow', shape: 'Terminator' },
-    annotations: [{ content: 'Place Order' }]
-  },
-  {
-    id: 'Meeting',
-    height: 60,
-    offsetX: centerX - 50,
-    offsetY: 160,
-    shape: { type: 'Flow', shape: 'Process' },
-    annotations: [{ content: 'Start Transaction' }]
-  },
-  {
-    id: 'BoardDecision',
-    height: 60,
-    offsetX: centerX - 50,
-    offsetY: 240,
-    shape: { type: 'Flow', shape: 'Process' },
-    annotations: [{ content: 'Verification' }]
-  },
-  {
-    id: 'Project',
-    height: 60,
-    offsetX: centerX - 50,
-    offsetY: 330,
-    shape: { type: 'Flow', shape: 'Decision' },
-    annotations: [{ content: 'Credit card valid?' }]
-  },
-  {
-    id: 'End',
-    height: 60,
-    offsetX: centerX - 50,
-    offsetY: 430,
-    shape: { type: 'Flow', shape: 'Decision' },
-    annotations: [{ content: 'Funds available?' }]
-  }
-];
+let nodes: NodeModel[] = [];
 
 //Initializes the connector for the diagram
-let connectors: ConnectorModel[] = [
-  { id: 'connector1', sourceID: 'NewIdea', targetID: 'Meeting' },
-  { id: 'connector2', sourceID: 'Meeting', targetID: 'BoardDecision' },
-  { id: 'connector3', sourceID: 'BoardDecision', targetID: 'Project' },
-  {
-    id: 'connector4',
-    sourceID: 'Project',
-    annotations: [{ content: 'Yes', style: { fill: 'white' } }],
-    targetID: 'End'
-  }
-];
+let connectors: ConnectorModel[] = [];
 
 //Initializes diagram control
 let diagram: Diagram = new Diagram({
@@ -194,24 +144,21 @@ let diagram: Diagram = new Diagram({
 diagram.appendTo('#diagram');
 
 //Initialize the flowshapes for the symbol palatte
-let flowShapes: NodeModel[] = [
-  getFlowShape('Terminator', 'Terminator'),
-  getFlowShape('Process', 'Process'),
-  getFlowShape('Decision', 'Decision'),
-  getFlowShape('Document', 'Document'),
-  getFlowShape('PreDefinedProcess', 'PreDefinedProcess'),
-  getFlowShape('PaperTap', 'PaperTap'),
-  getFlowShape('DirectData', 'DirectData'),
-  getFlowShape('SequentialData', 'SequentialData'),
-  getFlowShape('Sort', 'Sort'),
-  getFlowShape('MultiDocument', 'MultiDocument'),
-  getFlowShape('Collate', 'Collate'),
-  getFlowShape('Or', 'Or'),
-  getFlowShape('Extract', 'Extract'),
-  getFlowShape('Merge', 'Merge'),
-  getFlowShape('OffPageReference', 'OffPageReference')
-];
-
+    let basicShapes: NodeModel[] = [{
+            id: 'process',
+            shape: {
+                type: 'Flow',
+                shape: 'Process'
+            }
+        },
+        {
+            id: 'document',
+            shape: {
+                type: 'Flow',
+                shape: 'Document'
+            }
+        }
+    ];
 //Initializes connector symbols for the symbol palette
 let connectorSymbols: NodeModel[] = [
   {
@@ -271,7 +218,7 @@ let palettes: PaletteModel[] = [
   {
     id: 'flow',
     expanded: true,
-    symbols: flowShapes,
+    symbols: basicShapes,
     iconCss: 'e-ddb-icons e-flow',
     title: 'My Libary 1'
   },
