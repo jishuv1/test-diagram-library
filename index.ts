@@ -216,7 +216,7 @@ let palettes: PaletteModel[] = [
     expanded: true,
     symbols: connectorSymbols,
     iconCss: '',
-    title: 'connectors'
+    title: 'Connectors'
   }
 ];
 //Initializes the symbol palette
