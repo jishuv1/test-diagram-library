@@ -212,7 +212,11 @@ let palettes: PaletteModel[] = [
     title: 'My Libary 2'
   },
   {
-    
+    id: 'connector',
+    expanded: true,
+    symbols: connectorSymbols,
+    iconCss: '',
+    title: 'connectors'
   }
 ];
 //Initializes the symbol palette
