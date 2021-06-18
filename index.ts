@@ -209,14 +209,14 @@ let palettes: PaletteModel[] = [
     id: 'Custom',
     expanded: true,
     symbols: mySymbols,
-    iconCss: 'e-ddb-icons e-connector',
+    iconCss: 'e-ddb-icons e-flow',
     title: 'My Libary 2'
   },
   {
     id: 'connector',
     expanded: true,
     symbols: mySymbols,
-    iconCss: '',
+    iconCss: 'e-ddb-icons e-connector',
     title: 'Connectors'
   }
 ];
