@@ -179,7 +179,7 @@ let connectorSymbols: NodeModel[] = [
     height: 60
   },
   {
-    id: 'group1',
+    id: 'My Shape 1',
     children: ['rectangle1', 'or']
   },
   {
@@ -191,7 +191,7 @@ let connectorSymbols: NodeModel[] = [
     height: 60
   },
   {
-    id: 'group2',
+    id: 'My Shape 2',
     children: ['rectangle1', 'or2']
   },
   {
