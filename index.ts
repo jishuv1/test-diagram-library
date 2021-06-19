@@ -1,10 +1,6 @@
 import { enableRipple } from '@syncfusion/ej2-base';
 enableRipple(true);
 
-/**
- * Default FlowShape sample
- */
-
 import {
   Diagram,
   NodeModel,
@@ -70,20 +66,7 @@ function getBasicShape(id: string, shapeType: BasicShapes): NodeModel {
   return basicshape;
 }
 
-function getSymbolDefaults(symbol: NodeModel): void {
-  // symbol.style = { strokeColor: '#757575' };
-  // if (symbol.id === 'Terminator' || symbol.id === 'Process' || symbol.id === 'Delay') {
-  //     symbol.width = 80;
-  //     symbol.height = 40;
-  // } else if (symbol.id === 'Decision' || symbol.id === 'Document' || symbol.id === 'PreDefinedProcess' ||
-  //     symbol.id === 'PaperTap' || symbol.id === 'DirectData' || symbol.id === 'MultiDocument' || symbol.id === 'Data') {
-  //     symbol.width = 50;
-  //     symbol.height = 40;
-  // } else {
-  //     symbol.width = 50;
-  //     symbol.height = 50;
-  // }
-}
+function getSymbolDefaults(symbol: NodeModel): void {}
 
 function getSymbolInfo(symbol: NodeModel): SymbolInfo {
   return { fit: true };
